@@ -1,0 +1,42 @@
+** Docker Commands
+
+docker run -dit debian
+
+-d = detached mode
+-i = interactive shell
+-t = tty
+
+docker images
+
+Lists the downloaded images and their sizes
+
+docker inspect 
+
+docker pull nginx
+
+Downloads but does not create a container
+
+docker history nginx
+
+docker tag nginx:latest nginx:my_blog_stable
+
+Gives a tag name for an image
+
+docker build -t mynginx .
+
+Build an image from a dockerfile. The dot above tell the image to use the Dockerfile from the current directory.
+
+docker rmi nginx:my_blog_stable
+
+Removes a docker image
+
+docker image prune
+
+This removes images that are not associated with a container
+
+docker system df
+
+Shows how much disk space is used by docker
+
+
+

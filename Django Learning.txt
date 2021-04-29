@@ -1,0 +1,38 @@
+
+
+In html file:
+
+<form method="post">
+	{% csrf_token %}
+	<input type="submit" value="MOOONSTER1" name="monster1">
+	<input type="submit" value="MOOONSTER1" name="monster1">
+	
+
+
+
+In views:
+
+from django.shortcuts import render, redirect
+from django.db import IntegrityError
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from django.contrib.auth import login, logout
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
+import random
+# You also need to import models such as from .models import Article
+# If you want to import forms too from .forms import ChessForm
+
+
+
+# The below assumes two submit buttons on one form. The buttons are named monster1 and monster2
+def  monster_view(request):
+	if request.POST.get('monster1'):
+		# You could go to another page, or do some logic
+		return render(request, 'monster_app/page1')
+	if request.POST.get('monster2'):
+		# You could go to another page, or do some logic
+		return render(request, 'monster_app/page2')
+
+
+	
+	

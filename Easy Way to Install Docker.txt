@@ -1,0 +1,15 @@
+** Easy way to install Docker
+
+sudo apt update
+
+sudo apt install docker.io
+
+sudo systemctl status docker
+
+sudo systemctl start docker
+
+docker --version
+
+docker run -d -p 80:80 docker/getting-started
+
+docker ps -a
